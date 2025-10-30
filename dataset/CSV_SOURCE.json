@@ -5,14 +5,30 @@
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"folder": {
+				"type": "string",
+				"defaultValue": "source"
+			},
+			"file": {
+				"type": "string",
+				"defaultValue": "source_data_1.csv"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "source_data_1.csv",
+				"fileName": {
+					"value": "@dataset().file",
+					"type": "Expression"
+				},
 				"folderPath": "scdfiles",
-				"fileSystem": "source"
+				"fileSystem": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
