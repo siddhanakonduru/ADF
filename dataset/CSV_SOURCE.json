@@ -7,12 +7,10 @@
 		},
 		"parameters": {
 			"folder": {
-				"type": "string",
-				"defaultValue": "source"
+				"type": "string"
 			},
 			"file": {
-				"type": "string",
-				"defaultValue": "source_data_1.csv"
+				"type": "string"
 			}
 		},
 		"annotations": [],
